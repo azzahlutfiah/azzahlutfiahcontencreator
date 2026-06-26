@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azzah Lutfiyah - Premium Content Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --accent-2: #f5576c;
+            --gold: #ffd700;
+            --dark: #0a0e27;
+            --light: #f5f7fa;
+            --glass: rgba(255, 255, 255, 0.1);
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d1b4e 100%);
+            background-attachment: fixed;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            bottom: 100px;
+            right: -50px;
+            animation-delay: 5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            top: 50%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-20px) translateX(20px); }
+            50% { transform: translateY(0px) translateX(40px); }
+            75% { transform: translateY(-20px) translateX(20px); }
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: rgba(10, 14, 39, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #f093fb);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.5);
+            border-radius: 50px;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #667eea, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            animation: slideInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #0a0e27;
+            transform: translateY(-5px);
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            animation: slideInUp 0.8s ease-out 0.8s both;
+        }
+
+        .stat-box {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .stat-box:hover::before {
+            opacity: 1;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Platforms Section */
+        .platforms {
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .platform-card {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(240, 147, 251, 0.3));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 0;
+        }
+
+        .platform-card:hover::before {
+            opacity: 1;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .platform-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .platform-card:hover .platform-icon {
+            animation: none;
+        }
+
+        .platform-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .platform-handle {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            word-break: break-word;
+            position: relative;
+            z-index: 1;
+        }
+
+        .platform-stats {
+            font-size: 0.85rem;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .platform-link {
+            padding: 0.9rem 1.8rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .platform-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(102, 126, 234, 0.1), transparent);
+            animation: pulse 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .about-image img {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Avatar */
+        .hero-avatar {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 4px;
+            position: relative;
+            animation: slideInDown 0.8s ease-out;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .hero-avatar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, transparent, rgba(240, 147, 251, 0.3));
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.5), rgba(240, 147, 251, 0.5));
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-avatar-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Image Gallery */
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Services */
+        .services {
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.5);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+            cursor: pointer;
+            group: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            border-color: rgba(102, 126, 234, 0.8);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.5);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #808080;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                margin-top: 70px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .about-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">✨ AZZAH</div>
+            <ul class="nav-links">
+                <li><a href="#platforms">Platforms</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+            <button class="nav-cta" onclick="scrollToContact()">Get In Touch</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✨ Welcome to My Creative World</div>
+            
+            <!-- Avatar -->
+            <div class="hero-avatar">
+                <div class="hero-avatar-inner">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="Azzah Lutfiyah">
+                </div>
+            </div>
+            
+            <h1>
+                Creative <span class="gradient-text">Content Creator</span><br>
+                Building Communities
+            </h1>
+
+            <p class="hero-subtitle">
+                Crafting viral content across TikTok, Instagram, Shopee & LinkedIn<br>
+                500K+ followers | 2M+ monthly reach | 50+ brand collaborations
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('platforms').scrollIntoView({behavior: 'smooth'})">
+                    Explore My Channels
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToContact()">
+                    Collaborate With Me
+                </button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">K+ Followers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">M+ Monthly Reach</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Brand Collaborations</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-label">Active Platforms</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section class="platforms" id="platforms">
+        <div class="section-header">
+            <h2 class="section-title">My Social Universe</h2>
+            <p class="section-subtitle">Connect with me across all my platforms</p>
+        </div>
+
+        <div class="platforms-grid">
+            <!-- TikTok -->
+            <div class="platform-card reveal">
+                <div class="platform-icon">🎵</div>
+                <div>
+                    <div class="platform-name">TikTok</div>
+                    <div class="platform-handle">@hacking_____</div>
+                    <div class="platform-stats">Trending Videos | Viral Content</div>
+                </div>
+                <a href="https://tiktok.com/@hacking_____" target="_blank" class="platform-link">Follow Now →</a>
+            </div>
+
+            <!-- Instagram (alfinita_dev) -->
+            <div class="platform-card reveal">
+                <div class="platform-icon">📸</div>
+                <div>
+                    <div class="platform-name">Instagram</div>
+                    <div class="platform-handle">@alfinita_dev</div>
+                    <div class="platform-stats">Creative Reels | Photography</div>
+                </div>
+                <a href="https://instagram.com/alfinita_dev" target="_blank" class="platform-link">Follow Now →</a>
+            </div>
+
+            <!-- Instagram (pusatinfokerja) -->
+            <div class="platform-card reveal">
+                <div class="platform-icon">💼</div>
+                <div>
+                    <div class="platform-name">Instagram</div>
+                    <div class="platform-handle">@pusatinfokerja</div>
+                    <div class="platform-stats">Career Tips | Job Insights</div>
+                </div>
+                <a href="https://instagram.com/pusatinfokerja" target="_blank" class="platform-link">Follow Now →</a>
+            </div>
+
+            <!-- Shopee -->
+            <div class="platform-card reveal">
+                <div class="platform-icon">🛍️</div>
+                <div>
+                    <div class="platform-name">Shopee</div>
+                    <div class="platform-handle">@modisapasajaoffical</div>
+                    <div class="platform-stats">Fashion Curated | Trending Items</div>
+                </div>
+                <a href="https://shopee.co.id/modisapasajaoffical" target="_blank" class="platform-link">Visit Shop →</a>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="platform-card reveal">
+                <div class="platform-icon">💻</div>
+                <div>
+                    <div class="platform-name">LinkedIn</div>
+                    <div class="platform-handle">azzahlutfiyahku</div>
+                    <div class="platform-stats">Professional Insights | Growth</div>
+                </div>
+                <a href="https://linkedin.com/in/azzahlutfiyahku" target="_blank" class="platform-link">Connect →</a>
+            </div>
+
+            <!-- Lynk.id -->
+            <div class="platform-card reveal">
+                <div class="platform-icon">🔗</div>
+                <div>
+                    <div class="platform-name">Lynk</div>
+                    <div class="platform-handle">azzahlutfiah</div>
+                    <div class="platform-stats">All Links | Complete Profile</div>
+                </div>
+                <a href="https://lynk.id/azzahlutfiah" target="_blank" class="platform-link">Visit Lynk →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-content reveal">
+                <h2>Who's Behind The Content?</h2>
+                <p>Hey! I'm Azzah Lutfiyah, a passionate digital creator obsessed with building authentic communities across multiple platforms.</p>
+                <p>With 5+ years of experience in content creation and digital marketing, I've mastered the art of creating viral, engaging content that resonates with audiences.</p>
+                <p>From fashion & lifestyle to career development and entrepreneurship, I create content that educates, entertains, and inspires millions monthly.</p>
+                <a href="https://myazzahlutfiah.netlify.app" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View Full Portfolio →</a>
+            </div>
+            <div class="about-image reveal">
+                <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&h=500&fit=crop" alt="Content Creation" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2 class="section-title">What I Offer</h2>
+            <p class="section-subtitle">Premium services for your digital success</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">🎬</div>
+                <h3>Content Creation</h3>
+                <p>Profesional content production untuk semua platform dengan aesthetic dan messaging yang powerful.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">⭐</div>
+                <h3>Personal Branding</h3>
+                <p>Membantu Anda membangun personal brand yang authentic, memorable, dan profitable.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">📊</div>
+                <h3>Social Media Management</h3>
+                <p>Manajemen penuh social media dengan strategi yang data-driven dan hasil yang terukur.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🤝</div>
+                <h3>Brand Collaboration</h3>
+                <p>Kerjasama brand yang strategic untuk mutual growth dan audience expansion.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">✍️</div>
+                <h3>Copywriting</h3>
+                <p>Copy yang engaging, persuasive, dan conversion-focused untuk semua kebutuhan marketing.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🚀</div>
+                <h3>Growth Strategy</h3>
+                <p>Strategi pertumbuhan holistik untuk meningkatkan followers, engagement, dan monetization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-subtitle">Showcasing my best creative projects</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item reveal">
+                <img src="https://images.unsplash.com/photo-1611339555312-e607c04352fd?w=400&h=400&fit=crop" alt="Content 1">
+            </div>
+            <div class="portfolio-item reveal">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop" alt="Content 2">
+            </div>
+            <div class="portfolio-item reveal">
+                <img src="https://images.unsplash.com/photo-1551082726-5d2dde41c019?w=400&h=400&fit=crop" alt="Content 3">
+            </div>
+            <div class="portfolio-item reveal">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=400&h=400&fit=crop" alt="Content 4">
+            </div>
+            <div class="portfolio-item reveal">
+                <img src="https://images.unsplash.com/photo-1517694712056-74f249dcccb5?w=400&h=400&fit=crop" alt="Content 5">
+            </div>
+            <div class="portfolio-item reveal">
+                <img src="https://images.unsplash.com/photo-1535016120754-18c003266cb0?w=400&h=400&fit=crop" alt="Content 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="https://tiktok.com/@hacking_____" target="_blank">TikTok</a>
+                        <a href="https://instagram.com/alfinita_dev" target="_blank">Instagram</a>
+                        <a href="https://shopee.co.id/modisapasajaoffical" target="_blank">Shopee</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Professional</h3>
+                    <div class="footer-links">
+                        <a href="https://linkedin.com/in/azzahlutfiyahku" target="_blank">LinkedIn</a>
+                        <a href="https://lynk.id/azzahlutfiah" target="_blank">Lynk</a>
+                        <a href="https://myazzahlutfiah.netlify.app" target="_blank">Portfolio</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Let's Connect</h3>
+                    <div class="footer-links">
+                        <a href="#" onclick="alert('Email: contact@azzahlutfiah.com')">Email Me</a>
+                        <a href="#" onclick="alert('DM me on Instagram @alfinita_dev')">Direct Message</a>
+                        <a href="#" onclick="alert('Available for collaborations!')">Collaborate</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider">
+                <p>© 2024 Azzah Lutfiyah. All rights reserved | Crafted with ✨ & ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animated Counter
+        function animateCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 30;
+                
+                const updateCount = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Intersection Observer for Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation on scroll
+        let counterAnimated = false;
+        const statsSection = document.querySelector('.stats-container');
+
+        const statsObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterAnimated) {
+                    counterAnimated = true;
+                    animateCounter();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statsObserver.observe(statsSection);
+
+        // Smooth scroll helper
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mouse move parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.gradient-orb');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            orbs.forEach((orb, index) => {
+                const moveX = (x - 0.5) * 20;
+                const moveY = (y - 0.5) * 20;
+                orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+
+        // Add some interactivity to platform cards
+        document.querySelectorAll('.platform-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                const icon = this.querySelector('.platform-icon');
+                icon.style.animation = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
