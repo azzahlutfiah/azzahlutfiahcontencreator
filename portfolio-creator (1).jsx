@@ -296,7 +296,7 @@ export default function CreatorPortfolio() {
       {/* Footer */}
       <footer className="border-t border-purple-500/20 py-8 px-4">
         <div className="max-w-6xl mx-auto text-center text-gray-400">
-          <p className="mb-4">© 2024 Azzah Lutfiah. All rights reserved.</p>
+          <p className="mb-4">© 2026 Azzah Lutfiah. All rights reserved.</p>
           <div className="flex justify-center gap-6 text-sm">
             <a href="#" className="hover:text-purple-400 transition">Privacy Policy</a>
             <a href="#" className="hover:text-purple-400 transition">Terms of Service</a>
